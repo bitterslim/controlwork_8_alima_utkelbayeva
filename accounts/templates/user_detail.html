@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}User{% endblock %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <p>Username: {{ user.username }}</p>
+    <p>Name: {{ user.first_name }}</p>
+    <p>Surname: {{ user.last_name }}</p>
+        <a href=" {% url 'change' user.pk %}" class="btn btn-primary">Update</a>
+        <a href=" {% url 'password' user.pk %}" class="btn btn-primary">Change Password</a>
+    <div class="container">
+{% endblock %}

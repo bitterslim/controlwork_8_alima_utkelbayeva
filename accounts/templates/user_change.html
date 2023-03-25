@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Update user{% endblock %}
+{% block content %}
+    <div class="container">
+    <h1>Update your user data</h1>
+    <form action="{% url 'change' user.pk %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'partial/form.html' with form=form fields_only=True %}
+        {% include 'partial/form.html' with form=profile_form fields_only=True %}
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    </div>
+{% endblock %}
